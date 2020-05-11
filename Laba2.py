@@ -22,9 +22,13 @@ while flag:
     slovo = num.split()
     counter = 0
     for key in dic:
-        if slovo[2] == key:
-            print(key, '= ', dic[key])
-            counter += 1
+        if len(slovo) > 2:
+            if slovo[2] == key:
+                print(key, '= ', dic[key])
+                counter += 1
+        else:
+            counter = 0
+
     if counter == 0:
         print('no parameter')
     command = input("Continue? Yes or No: ")
@@ -32,4 +36,3 @@ while flag:
         flag = True
     elif command.lower() == "no":
         flag = False
-
